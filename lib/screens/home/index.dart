@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kidzit_app/models/tool_model.dart';
+import 'package:kidzit_app/screens/home/widgets/curve_painter.dart';
 import 'package:kidzit_app/shared/routes.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +14,13 @@ class HomePageState extends State<HomePage> {
     new ToolModel(
         imageUrl: "assets/embryo.png",
         type: "Fetal Growth",
-        routeUrl: Routes.HOME_WEB),
+        routeUrl:
+            "/homeWeb?url=http://www.d4academy.com/TheKidsZit/fetalwebview"),
     new ToolModel(
         imageUrl: "assets/affirmation.png",
-        type: "Safe Tips",
-        routeUrl: Routes.HOME_WEB),
+        type: "Affirmation",
+        routeUrl:
+            "/homeWeb?url=http://www.d4academy.com/TheKidsZit/fetalwebview"),
     new ToolModel(
         imageUrl: "assets/heart.png",
         type: "Prenatal Physiology",
@@ -70,63 +74,68 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top: 20.0,
-                left: 20.0,
-                right: 20.0,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: MediaQuery.of(context).size.height / 5,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                              icon: Icon(
-                                Icons.arrow_back_ios,
-                                color: Colors.white,
-                                size: 18.0,
-                              ),
-                              onPressed: () => Navigator.pop(context)),
-                          IconButton(
-                              icon: Icon(
-                                Icons.notification_important_outlined,
-                                color: Colors.white,
-                                size: 18.0,
-                              ),
-                              onPressed: null)
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                "2",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 30.0),
-                              ),
-                              Text(
-                                "Weeks",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 30.0),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                top: MediaQuery.of(context).size.height / 6,
+                left: 0.0,
+                child: CustomPaint(
+                  painter: CurvePainter(week: 2),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 5,
+                    width: MediaQuery.of(context).size.width,
                   ),
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.4,
+                  top: 20.0,
+                  left: 20.0,
+                  right: 20.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                          icon: Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                            size: 18.0,
+                          ),
+                          onPressed: () => Navigator.pop(context)),
+                      IconButton(
+                          icon: Icon(
+                            Icons.notification_important_outlined,
+                            color: Colors.white,
+                            size: 18.0,
+                          ),
+                          onPressed: null)
+                    ],
+                  )),
+              Positioned(
+                  top: 40.0,
+                  left: MediaQuery.of(context).size.width * 0.3,
+                  right: MediaQuery.of(context).size.width * 0.3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "2",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24.0),
+                          ),
+                          Text(
+                            "Weeks",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24.0),
+                          )
+                        ],
+                      ),
+                    ],
+                  )),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.38,
                 left: MediaQuery.of(context).size.width * 0.4,
                 right: MediaQuery.of(context).size.width * 0.4,
                 child: Container(
@@ -153,7 +162,7 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.3,
+                top: MediaQuery.of(context).size.height / 4,
                 left: 20.0,
                 right: 20.0,
                 child: Container(
@@ -166,7 +175,7 @@ class HomePageState extends State<HomePage> {
                           Text(
                             "2",
                             style:
-                                TextStyle(color: Colors.white, fontSize: 24.0),
+                                TextStyle(color: Colors.white, fontSize: 20.0),
                           ),
                           Text(
                             "PER HOUR",
@@ -184,7 +193,7 @@ class HomePageState extends State<HomePage> {
                           Text(
                             "2",
                             style:
-                                TextStyle(color: Colors.white, fontSize: 24.0),
+                                TextStyle(color: Colors.white, fontSize: 20.0),
                           ),
                           Text(
                             "PER HOUR",
@@ -209,11 +218,11 @@ class HomePageState extends State<HomePage> {
                 left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,childAspectRatio: 0.80),
+                    crossAxisCount: 3, childAspectRatio: 0.80),
                 itemCount: model.length,
                 itemBuilder: (context, int index) {
                   return InkWell(
-                    onTap: () => Navigator.pushNamed(context, Routes.HOME_WEB),
+                    onTap: () => Get.toNamed(model[index].routeUrl),
                     child: Container(
                       margin: const EdgeInsets.symmetric(
                           horizontal: 5.0, vertical: 20.0),
@@ -229,7 +238,8 @@ class HomePageState extends State<HomePage> {
                           Container(
                             child: Text(
                               model[index].type,
-                              style: TextStyle(fontSize: 12.0,color: Colors.black),
+                              style: TextStyle(
+                                  fontSize: 12.0, color: Colors.black),
                               textAlign: TextAlign.center,
                             ),
                           )
@@ -238,6 +248,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   );
                 }),
+            color: Colors.white,
           )
         ],
       ),

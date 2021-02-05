@@ -1,27 +1,31 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kidzit_app/shared/routes.dart';
 import 'package:kidzit_app/shared/utils/hex.dart';
 
-class IntroPage extends StatefulWidget{
-  IntroPageState createState()=>IntroPageState();
+class IntroPage extends StatefulWidget {
+  IntroPageState createState() => IntroPageState();
 }
-class IntroPageState extends State<IntroPage>{
 
-  void initState(){
+class IntroPageState extends State<IntroPage> {
+  void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), (){
-      Navigator.pushNamed(context, Routes.SPLASH);
+    Timer(Duration(seconds: 2), () {
+      Get.offNamed(Routes.SPLASH);
     });
   }
-  Widget build(BuildContext context){
+
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: HexColor("#72E3E7"),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(child: SizedBox(),),
+          Expanded(
+            child: SizedBox(),
+          ),
           Image.asset("assets/logo.jpg"),
           //TODO- Add stack details
           Stack(
@@ -30,7 +34,6 @@ class IntroPageState extends State<IntroPage>{
                 width: MediaQuery.of(context).size.width,
                 color: Colors.white,
               ),
-
             ],
           )
         ],

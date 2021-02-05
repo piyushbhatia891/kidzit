@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kidzit_app/models/onboarding_data.dart';
-import 'package:kidzit_app/shared/utils/hex.dart';
 
 class IntroScreen extends StatefulWidget {
   final List<OnbordingData> onbordingDataList;
-  final MaterialPageRoute pageRoute;
+  final String pageRoute;
   IntroScreen(this.onbordingDataList, this.pageRoute);
 
   void skipPage(BuildContext context) {
-    Navigator.push(context, pageRoute);
+    Get.offNamed(pageRoute);
   }
 
   @override
@@ -83,8 +82,8 @@ class IntroScreenState extends State<IntroScreen> {
                     onPressed: () => lastPage
                         ? null
                         : widget.skipPage(
-                      context,
-                    ),
+                            context,
+                          ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -107,8 +106,8 @@ class IntroScreenState extends State<IntroScreen> {
                     onPressed: () => lastPage
                         ? widget.skipPage(context)
                         : controller.nextPage(
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeIn),
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeIn),
                   ),
                 ],
               ),

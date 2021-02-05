@@ -29,10 +29,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   charts_flutter: ^0.9.0
+  get: ^3.24.0
+  dio: 3.0.10
+  fluttertoast: 7.1.6
+  shared_preferences:
+  json_annotation:
+  webview_flutter: ^1.0.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  json_serializable:
+  build_runner:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
