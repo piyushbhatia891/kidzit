@@ -66,11 +66,11 @@ class MobileLoginController extends GetxController {
             prefereences.setString("physiology_view", model.Physiology_View);
             prefereences.setString("tips_view", model.Tips_View);
             prefereences.setString("prayers_view", model.Prayers_View);
+            prefereences.setString("food_view", model.Prayers_View);
           }
-          Get.offNamed("/homeWeb?url=${prefereences.getString("home_view")}");
+          Get.offNamed("/home?url=${prefereences.getString("home_view")}");
         });
-      }
-      else{
+      } else {
         _defaultDialog("Please Enter a valid Otp");
       }
     });

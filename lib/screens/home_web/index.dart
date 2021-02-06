@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import '../home/widgets/web_view_home.dart';
 
 WebViewController controllerGlobal;
 
@@ -56,46 +57,6 @@ class HomeWebPageState extends State<HomeWebPage> {
 
   bool isLoading = true;
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () => _onBack(),
-      child: Scaffold(
-        appBar: AppBar(
-            backgroundColor: Color(0xFFFA2A88),
-            title: Text(
-              "Webview App",
-              style: TextStyle(color: Colors.white),
-            )),
-        body: Stack(
-          children: <Widget>[
-            WebView(
-              onWebViewCreated: (WebViewController controller) {
-                webView = controller;
-              },
-              initialUrl: Get.parameters["url"],
-              javascriptMode: JavascriptMode.unrestricted,
-              onPageFinished: (finish) {
-                setState(() {
-                  isLoading = false;
-                });
-              },
-            ),
-            isLoading
-                ? Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircularProgressIndicator(),
-                        Text("Loading Details")
-                      ],
-                    ),
-                  )
-                : Container(),
-          ],
-        ),
-      ),
-    );
-
     return Scaffold(
       body: ListView(
         children: [
@@ -259,41 +220,7 @@ class HomeWebPageState extends State<HomeWebPage> {
               )
             ],
           ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.9,
-            margin: const EdgeInsets.symmetric(horizontal: 10.0),
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    "Fetal Detail",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.pink, fontSize: 16.0),
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      border: Border.all(color: Colors.pink),
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/fetal_home.png"))),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    "Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with 'real' content. ",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-                Expanded(child: SizedBox())
-              ],
-            ),
-          )
+          WebHomeView(url: Get.parameters["url"]),
         ],
       ),
     );

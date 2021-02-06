@@ -9,7 +9,8 @@ class UrlConfigDataModel {
       Prayers_View,
       Tips_View,
       Affirmation_View,
-      Physiology_View;
+      Physiology_View,
+      Food_View;
 
   UrlConfigDataModel(
       this.Home_View,
@@ -18,7 +19,8 @@ class UrlConfigDataModel {
       this.Prayers_View,
       this.Tips_View,
       this.Affirmation_View,
-      this.Physiology_View);
+      this.Physiology_View,
+      this.Food_View);
 
   factory UrlConfigDataModel.fromJson(Map<String, dynamic> json) =>
       _$UrlConfigDataModelFromJson(json);
