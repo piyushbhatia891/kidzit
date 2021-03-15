@@ -10,6 +10,7 @@ class UrlConfigDataModel {
       Tips_View,
       Affirmation_View,
       Physiology_View,
+      Psychology_View,
       Food_View;
 
   UrlConfigDataModel(
@@ -20,6 +21,7 @@ class UrlConfigDataModel {
       this.Tips_View,
       this.Affirmation_View,
       this.Physiology_View,
+      this.Psychology_View,
       this.Food_View);
 
   factory UrlConfigDataModel.fromJson(Map<String, dynamic> json) =>

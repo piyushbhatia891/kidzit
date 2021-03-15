@@ -35,7 +35,7 @@ dependencies:
   shared_preferences:
   json_annotation:
   webview_flutter: ^1.0.7
-
+  flutter_calendar_carousel: ^1.5.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

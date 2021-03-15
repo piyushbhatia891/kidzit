@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-app.iml" group="android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1417102056/android-fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/-1417102056/android-fluttertoast.iml" group="android/fluttertoast" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/934204533/android-shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/934204533/android-shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1243626378/android-webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/1243626378/android-webview_flutter.iml" group="android/webview_flutter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
@@ -12,9 +13,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/934204533/io.flutter.plugins.sharedpreferences-shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/934204533/io.flutter.plugins.sharedpreferences-shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1243626378/io.flutter.plugins.webviewflutter-webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/1243626378/io.flutter.plugins.webviewflutter-webview_flutter.iml" group="android/webview_flutter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kidzit_app-android.iml" filepath="$PROJECT_DIR$/.idea/modules/kidzit_app-android.iml" group="android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1294891240/pub.dartlang.org-shared_preferences-0.5.12+4-android-shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-1294891240/pub.dartlang.org-shared_preferences-0.5.12+4-android-shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/934204533/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/934204533/shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/934204533/shared_preferences-0.5.12+4-android-shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/934204533/shared_preferences-0.5.12+4-android-shared_preferences.iml" group="android/shared_preferences" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1243626378/webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/1243626378/webview_flutter.iml" group="android/webview_flutter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/928670829/webview_flutter-1.0.7-android-webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/928670829/webview_flutter-1.0.7-android-webview_flutter.iml" group="android/webview_flutter" />
     </modules>
   </component>
 </project>

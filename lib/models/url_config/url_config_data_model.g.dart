@@ -8,14 +8,16 @@ part of 'url_config_data_model.dart';
 
 UrlConfigDataModel _$UrlConfigDataModelFromJson(Map<String, dynamic> json) {
   return UrlConfigDataModel(
-      json['Home_View'] as String,
-      json['Fetal_View'] as String,
-      json['Daily_Diary_View'] as String,
-      json['Prayers_View'] as String,
-      json['Tips_View'] as String,
-      json['Affirmation_View'] as String,
-      json['Physiology_View'] as String,
-      json['Food_View'] as String);
+    json['Home_View'] as String,
+    json['Fetal_View'] as String,
+    json['Daily_Diary_View'] as String,
+    json['Prayers_View'] as String,
+    json['Tips_View'] as String,
+    json['Affirmation_View'] as String,
+    json['Physiology_View'] as String,
+    json['Psychology_View'] as String,
+    json['Food_View'] as String,
+  );
 }
 
 Map<String, dynamic> _$UrlConfigDataModelToJson(UrlConfigDataModel instance) =>
@@ -27,4 +29,5 @@ Map<String, dynamic> _$UrlConfigDataModelToJson(UrlConfigDataModel instance) =>
       'Tips_View': instance.Tips_View,
       'Affirmation_View': instance.Affirmation_View,
       'Physiology_View': instance.Physiology_View,
+      'Food_View': instance.Food_View,
     };

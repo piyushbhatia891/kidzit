@@ -5,9 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class MobileLoginProvider {
   final String baseUrl_login_with_mobile =
-      "http://d4academy.com/TheKidsZit/index.php/API/sendOtp";
+      "http://thekidzit.in/admin/index.php/API/sendOtp";
   final String baseUrl_login_with_otp =
-      "http://d4academy.com/TheKidsZit/index.php/API/verifyOtp";
+      "http://thekidzit.in/admin/index.php/API/verifyOtp";
 
   Future<MobileLoginModel> loginWithMobile(String mobile) async {
     try {
@@ -15,7 +15,8 @@ class MobileLoginProvider {
         'phone': mobile,
         'fcmToken': '',
         "apiVersion": "1.0",
-        "name": "testing"
+        "name": "testing",
+        "imei": "7038"
       });
       if (response.statusCode == 200) {
         SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -33,8 +34,12 @@ class MobileLoginProvider {
 
   Future<OtpLoginModel> loginWithOtp(String mobile, String otp) async {
     try {
-      Response response = await Dio().post("$baseUrl_login_with_otp",
-          data: {'phone': mobile, 'otp': otp, "apiVersion": "1.0", 'imei': ''});
+      Response response = await Dio().post("$baseUrl_login_with_otp", data: {
+        'phone': mobile,
+        'otp': otp,
+        "apiVersion": "1.0",
+        'imei': '7038'
+      });
       if (response.statusCode == 200) {
         return OtpLoginModel.fromJson(response.data); //Return decoded response
       } else {

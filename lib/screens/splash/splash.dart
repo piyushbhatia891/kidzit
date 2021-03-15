@@ -11,16 +11,15 @@ class SplashScreen extends StatefulWidget {
 class SplashScreenState extends State<SplashScreen> {
   final List<OnbordingData> list = [
     OnbordingData(
-      imagePath: "assets/onboarding1.png",
+      imagePath: "assets/1.JPEG",
       title: "Be Happy",
     ),
     OnbordingData(
-      imagePath: "assets/onboarding2.png",
+      imagePath: "assets/2.JPEG",
       title: "Yoga",
     ),
     OnbordingData(
-        imagePath: "assets/onboarding3.png",
-        title: "Find  Community of love & support"),
+        imagePath: "assets/3.JPEG", title: "Find  Community of love & support"),
   ];
   Widget build(BuildContext context) {
     return IntroScreen(list, Routes.LOGIN);

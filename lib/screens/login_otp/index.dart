@@ -52,7 +52,9 @@ class LoginOtpPageState extends State<LoginOtpPage> {
                           blurRadius: 15.0,
                           spreadRadius: 2.0)
                     ]),
-                child: Image.asset("assets/mobile2.png"),
+                child: Container(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Image.asset("assets/mobile2.png")),
               ),
               Expanded(
                 child: SizedBox(),
@@ -78,7 +80,7 @@ class LoginOtpPageState extends State<LoginOtpPage> {
                     ),
                     RichText(
                       text: TextSpan(
-                          text: "Enter the OTP sent to",
+                          text: "Enter the OTP sent to ",
                           style: TextStyle(
                               color: Color(0xFF8E8E8E), fontSize: 16.0),
                           children: [
@@ -92,6 +94,8 @@ class LoginOtpPageState extends State<LoginOtpPage> {
                           ]),
                     ),
                     TextFormField(
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                      keyboardType: TextInputType.number,
                       controller: _otp,
                       decoration: InputDecoration(
                         fillColor: Colors.black54,

@@ -47,7 +47,7 @@ class LoginPageState extends State<LoginPage> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.8,
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    //height: MediaQuery.of(context).size.height * 0.4,
                     padding: const EdgeInsets.all(20.0),
                     margin: const EdgeInsets.symmetric(vertical: 10.0),
                     decoration: BoxDecoration(
@@ -67,8 +67,7 @@ class LoginPageState extends State<LoginPage> {
                         RichText(
                           text: TextSpan(
                               text: "We will send you ",
-                              style: TextStyle(
-                                  color: Color(0xFF8E8E8E), fontSize: 16.0),
+                              style: TextStyle(color: Color(0xFF8E8E8E)),
                               children: [
                                 TextSpan(
                                     text: "One Time Password",
@@ -77,17 +76,16 @@ class LoginPageState extends State<LoginPage> {
                                         fontWeight: FontWeight.bold)),
                                 TextSpan(
                                   text: " on this mobile number ",
-                                  style: TextStyle(
-                                      color: Color(0xFF8E8E8E), fontSize: 16.0),
+                                  style: TextStyle(color: Color(0xFF8E8E8E)),
                                 )
                               ]),
                         ),
                         Text(
                           "Enter Mobile Number",
-                          style: TextStyle(
-                              color: Color(0xFF8E8E8E), fontSize: 16.0),
+                          style: TextStyle(color: Color(0xFF8E8E8E)),
                         ),
                         TextFormField(
+                          keyboardType: TextInputType.number,
                           style: TextStyle(fontWeight: FontWeight.bold),
                           decoration: InputDecoration(
                               fillColor: Colors.black,
@@ -110,6 +108,7 @@ class LoginPageState extends State<LoginPage> {
                                   .loginWithMobile(_mobileNumber.text);
                           },
                           child: Container(
+                            margin: const EdgeInsets.symmetric(vertical: 10.0),
                             padding: const EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50.0),

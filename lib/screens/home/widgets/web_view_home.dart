@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/platform_interface.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebHomeView extends StatefulWidget {
@@ -55,40 +56,37 @@ class WebHomeViewState extends State<WebHomeView> {
   }
 
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Stack(children: [
-        ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: 400),
-          child: WebView(
-            gestureRecognizers: {
-              Factory<VerticalDragGestureRecognizer>(
-                  () => VerticalDragGestureRecognizer()..onUpdate = (_) {})
-            },
-            onWebViewCreated: (WebViewController controller) {
-              webView = controller;
-            },
-            initialUrl: widget.url,
-            javascriptMode: JavascriptMode.unrestricted,
-            onPageFinished: (finish) {
-              setState(() {
-                isLoading = false;
-              });
-            },
-          ),
-        ),
-        isLoading
-            ? Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Loading Details")
-                  ],
-                ),
-              )
-            : Container()
-      ]),
+    return ConstrainedBox(
+      constraints:
+          BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+      child: WebView(
+        /*gestureRecognizers: {
+          Factory<VerticalDragGestureRecognizer>(
+              () => VerticalDragGestureRecognizer()..onUpdate = (_) {})
+        },*/
+        onWebViewCreated: (WebViewController controller) {
+          webView = controller;
+        },
+        initialUrl: widget.url,
+        javascriptMode: JavascriptMode.unrestricted,
+        onPageFinished: (finish) {
+          setState(() {
+            isLoading = false;
+          });
+        },
+      ),
     );
+    /*isLoading
+          ? Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  Text("Loading Details")
+                ],
+              ),
+            )
+          : Container()*/
   }
 }

@@ -21,7 +21,6 @@ class _OnbordingDataState extends State<OnbordingData> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,23 +28,6 @@ class _OnbordingDataState extends State<OnbordingData> {
           Image(
             image: AssetImage(imagePath),
           ),
-
-          Expanded(
-            child: SizedBox(
-
-            ),
-          ),
-
-          Text(
-            title,
-            //softWrap: true,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white, fontSize: 20),
-          ),
-          SizedBox(
-            height: 12.0,
-          ),
-
         ],
       ),
     );

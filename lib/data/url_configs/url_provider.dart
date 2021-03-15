@@ -3,7 +3,7 @@ import 'package:kidzit_app/models/url_config/url_config.dart';
 
 class UrlConfigProvider {
   final String baseUrl_url_configs =
-      "http://d4academy.com/TheKidsZit/index.php/API/webPageUrls";
+      "http://thekidzit.in/admin/index.php/API/webPageUrls";
 
   Future<UrlConfig> getConfigUrls() async {
     try {
